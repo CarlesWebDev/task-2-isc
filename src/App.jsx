@@ -3,16 +3,16 @@ import Lenis from "lenis";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Navbar from "./components/navbar";
-import Hero from "./components/hero";
-import About from "./components/about";
-import Experience from "./components/experience";
-import Projects from "./components/project";
-import Skills from "./components/skills";
-import Contact from "./components/contact";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Project";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/scrolltotop";
-import AmbientBackground from "./components/ambientbackground";
+import ScrollToTop from "./components/Scrolltotop";
+import AmbientBackground from "./components/Ambientbackground";
 
 function App() {
   useEffect(() => {
@@ -55,7 +55,6 @@ function App() {
     <div className="min-h-screen text-white selection:bg-[#1d240a] selection:text-black">
       <AmbientBackground />
       <Navbar />
-
       <main className="overflow-x-hidden">
         <Hero />
         <About />
