@@ -49,7 +49,7 @@ export const projects = [
     description: 'Aplikasi pencatatan dan kalkulasi barang belanjaan yang dilengkapi dengan fitur scanning untuk efisiensi transaksi.',
     stack: ['Go(Gin)', 'Next.Js',  'Tailwind', 'PostgreSql'],
     year: '2026',
-    live: '#',
+    live: 'https://financial-app.corelevdigital.web.id/',
     repo: '#',
     image: '#',
     featured: false,
