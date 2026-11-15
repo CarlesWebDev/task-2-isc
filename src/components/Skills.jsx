@@ -33,7 +33,7 @@ export default function Skills() {
         <motion.div
           className="flex gap-4 md:gap-6 w-max"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+          transition={{ ease: "linear", duration: 45, repeat: Infinity }}
         >
           {duplicatedRow1.map((skill, index) => (
             <div
@@ -53,7 +53,7 @@ export default function Skills() {
         <motion.div
           className="flex gap-4 md:gap-6 w-max"
           animate={{ x: ["-50%", "0%"] }}
-          transition={{ ease: "linear", duration: 35, repeat: Infinity }}
+          transition={{ ease: "linear", duration: 45, repeat: Infinity }}
         >
           {duplicatedRow2.map((skill, index) => (
             <div
