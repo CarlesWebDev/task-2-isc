@@ -14,6 +14,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/Scrolltotop"; 
+import AmbientBackground from "./components/Ambientbackground";
 
 function App() {
   const [isLoading, setIsLoading] = useState(() => {
@@ -75,6 +76,7 @@ function App() {
 
       <div className={`${isLoading ? "h-screen overflow-hidden" : ""}`}>
         <Navbar />
+        <AmbientBackground />
         <main className="overflow-x-hidden">
           <Hero />
           <About />
