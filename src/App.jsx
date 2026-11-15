@@ -80,9 +80,9 @@ function App() {
         <main className="overflow-x-hidden">
           <Hero />
           <About />
-          <Experience />
+          {/* <Experience />
           <Projects />
-          <Skills />
+          <Skills /> */}
           <Contact />
         </main>
         <ScrollToTop />
