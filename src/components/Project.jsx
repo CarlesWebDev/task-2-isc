@@ -43,7 +43,8 @@ export default function Projects() {
           transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
           className="grid md:grid-cols-2 gap-6 lg:gap-8"
         >
-          <AnimatePresence mode="popLayout">
+          {/* HAPUS mode="popLayout" DI SINI AGAR TIDAK CRASH DI VERCEL */}
+          <AnimatePresence>
             {displayedProjects.map((project, i) => {
               const isRepoActive =
                 project?.repo &&

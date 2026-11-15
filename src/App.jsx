@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="min-h-screen text-white selection:bg-[#c8ff3d] selection:text-black">
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isLoading && (
           <Loader
             key="loader"
@@ -72,7 +72,7 @@ function App() {
             }}
           />
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
 
       <div className={`${isLoading ? "h-screen overflow-hidden" : ""}`}>
         <Navbar />
