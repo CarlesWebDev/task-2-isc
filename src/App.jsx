@@ -4,17 +4,16 @@ import Lenis from "lenis";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
-import Loader from "./components/Loader"; 
-import Navbar from "./components/navbar";
-import Hero from "./components/hero";
-import About from "./components/about";
-import Experience from "./components/experience";
-import Projects from "./components/project";
-import Skills from "./components/skills";
-import Contact from "./components/contact";
-import Footer from "./components/footer";
-import ScrollToTop from "./components/scrolltotop";
+import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Project"; 
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/Scrolltotop"; 
 
 function App() {
   const [isLoading, setIsLoading] = useState(() => {
