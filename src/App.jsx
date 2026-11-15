@@ -4,17 +4,16 @@ import Lenis from "lenis";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// SEMUA HURUF KAPITAL DISESUAIKAN DENGAN NAMA FILE DI VSCODE ANDA
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
-import Projects from "./components/Project"; // Di VSCode Anda namanya Project.jsx tanpa 's'
+import Projects from "./components/Project"; 
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/Scrolltotop"; // Di VSCode Anda huruf 't' nya kecil
+import ScrollToTop from "./components/Scrolltotop"; 
 
 function App() {
   const [isLoading, setIsLoading] = useState(() => {
