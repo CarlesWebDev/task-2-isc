@@ -23,8 +23,8 @@ export default function Projects() {
     }
   };
 
-  const safeProject = projects || [];
-  const displayedProjects = isExpanded ? projects : projects.slice(0, 2);
+  const safeProjects = Array.isArray(projects) ? projects : [];
+  const displayedProjects = isExpanded ? safeProjects : safeProjects.slice(0, 2);
 
   return (
     <section id="projects" className="py-16 md:py-24 border-b border-white/10">
@@ -46,17 +46,17 @@ export default function Projects() {
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project, i) => {
               const isRepoActive =
-                project.repo &&
+                project?.repo &&
                 project.repo.trim() !== "" &&
                 project.repo !== "#";
               const isLiveActive =
-                project.live &&
+                project?.live &&
                 project.live.trim() !== "" &&
                 project.live !== "#";
 
               return (
                 <motion.div
-                  key={project.id}
+                  key={project?.id || i}
                   layout
                   initial={{ opacity: 0, y: 50, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -78,10 +78,10 @@ export default function Projects() {
                     <div className="flex justify-between items-start mb-6 md:mb-8">
                       <div className="flex flex-col">
                         <span className="font-mono text-5xl md:text-6xl font-extrabold text-white/5 leading-none">
-                          {project.id}
+                          {project?.id}
                         </span>
                         <span className="font-mono text-lg md:text-xl font-bold text-white/10 mt-1 md:mt-2">
-                          {project.year}
+                          {project?.year}
                         </span>
                       </div>
 
@@ -127,15 +127,15 @@ export default function Projects() {
                     </div>
 
                     <h4 className="text-2xl md:text-3xl font-display text-white mb-3 md:mb-4">
-                      {project.name}
+                      {project?.name}
                     </h4>
                     <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8 md:mb-12 pr-0 md:pr-4">
-                      {project.description}
+                      {project?.description}
                     </p>
                   </div>
 
                   <div className="flex flex-wrap gap-2 md:gap-3">
-                    {project.stack?.map((tech) => (
+                    {project?.stack?.map((tech) => (
                       <span
                         key={tech}
                         className="font-mono text-[10px] sm:text-xs uppercase tracking-wider px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/10 text-gray-300 bg-white/5"
@@ -150,7 +150,7 @@ export default function Projects() {
           </AnimatePresence>
         </motion.div>
 
-        {safeProject.length > 2 && (
+        {safeProjects.length > 2 && (
           <div className="mt-12 flex justify-center">
             <button
               onClick={handleToggle}

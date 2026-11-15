@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { skills } from "../data/skills";
 
 export default function Skills() {
-  const allSkills = skills.flatMap((group) => group.items);
+  const safeSkills = Array.isArray(skills) ? skills : [];
+  const allSkills = safeSkills.flatMap((group) => group?.items || []);
 
   const half = Math.ceil(allSkills.length / 2);
   const row1 = allSkills.slice(0, half);
@@ -14,7 +15,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 md:py-32 overflow-hidden border-b border-white/10 "
+      className="py-20 md:py-32 overflow-hidden border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-6 mb-12 md:mb-16 text-center">
         <h2
@@ -43,14 +44,14 @@ export default function Skills() {
         >
           {duplicatedRow1.map((skill, index) => (
             <div
-              key={`row1-${skill.name}-${index}`}
+              key={`row1-${skill?.name || index}-${index}`}
               className="flex items-center gap-2 md:gap-3 bg-white/5 border border-white/10 px-4 py-3 md:px-6 md:py-4 rounded-xl hover:bg-white/10 transition-colors"
             >
               <span className="text-xl md:text-3xl text-gray-300">
-                {skill.icon}
+                {skill?.icon}
               </span>
               <span className="font-mono text-xs md:text-sm text-gray-300 whitespace-nowrap">
-                {skill.name}
+                {skill?.name}
               </span>
             </div>
           ))}
@@ -63,14 +64,14 @@ export default function Skills() {
         >
           {duplicatedRow2.map((skill, index) => (
             <div
-              key={`row2-${skill.name}-${index}`}
+              key={`row2-${skill?.name || index}-${index}`}
               className="flex items-center gap-2 md:gap-3 bg-white/5 border border-white/10 px-4 py-3 md:px-6 md:py-4 rounded-xl hover:bg-white/10 transition-colors"
             >
               <span className="text-xl md:text-3xl text-gray-300">
-                {skill.icon}
+                {skill?.icon}
               </span>
               <span className="font-mono text-xs md:text-sm text-gray-300 whitespace-nowrap">
-                {skill.name}
+                {skill?.name}
               </span>
             </div>
           ))}
