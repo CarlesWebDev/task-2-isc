@@ -11,7 +11,6 @@ export default function Projects() {
       const section = document.getElementById("projects");
       if (section) {
         section.scrollIntoView({ behavior: "smooth", block: "start" });
-
         setTimeout(() => {
           setIsExpanded(false);
         }, 800);
@@ -38,12 +37,11 @@ export default function Projects() {
           </h3>
         </div>
 
+        {/* PROPERTI 'layout' DIHAPUS DARI SINI */}
         <motion.div
-          layout
           transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
           className="grid md:grid-cols-2 gap-6 lg:gap-8"
         >
-          {/* HAPUS mode="popLayout" DI SINI AGAR TIDAK CRASH DI VERCEL */}
           <AnimatePresence>
             {displayedProjects.map((project, i) => {
               const isRepoActive =
@@ -57,8 +55,8 @@ export default function Projects() {
 
               return (
                 <motion.div
-                  key={project?.id || i}
-                  layout
+                  key={project?.id || `project-${i}`} // Pengaman Key
+                  // PROPERTI 'layout' DIHAPUS DARI SINI JUGA
                   initial={{ opacity: 0, y: 50, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{
@@ -93,15 +91,11 @@ export default function Projects() {
                             target="_blank"
                             rel="noreferrer"
                             className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#c8ff3d] hover:text-black hover:border-[#c8ff3d] transition-all"
-                            title="Repository Tersedia"
                           >
                             <FaGithub className="text-base md:text-lg" />
                           </a>
                         ) : (
-                          <span
-                            className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-black/20 border border-white/5 flex items-center justify-center text-gray-700 cursor-not-allowed opacity-50"
-                            title="Repository Private/Tidak Tersedia"
-                          >
+                          <span className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-black/20 border border-white/5 flex items-center justify-center text-gray-700 cursor-not-allowed opacity-50">
                             <FaGithub className="text-base md:text-lg" />
                           </span>
                         )}
@@ -112,15 +106,11 @@ export default function Projects() {
                             target="_blank"
                             rel="noreferrer"
                             className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#c8ff3d] hover:text-black hover:border-[#c8ff3d] transition-all"
-                            title="Live Demo Tersedia"
                           >
                             ↗
                           </a>
                         ) : (
-                          <span
-                            className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-black/20 border border-white/5 flex items-center justify-center text-gray-700 cursor-not-allowed opacity-50"
-                            title="Live Demo Tidak Tersedia"
-                          >
+                          <span className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-black/20 border border-white/5 flex items-center justify-center text-gray-700 cursor-not-allowed opacity-50">
                             ↗
                           </span>
                         )}

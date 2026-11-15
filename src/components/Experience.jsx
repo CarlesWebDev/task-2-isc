@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { experiences } from "../data/experience";
 
 export default function Experience() {
+  // PENGAMAN DITAMBAHKAN DI SINI
+  const safeExperiences = Array.isArray(experiences) ? experiences : [];
+
   return (
     <section id="experience" className="py-32 border-b border-white/10 ">
       <div className="max-w-7xl mx-auto px-6">
@@ -27,9 +30,10 @@ export default function Experience() {
           </motion.div>
 
           <div className="flex flex-col">
-            {experiences.map((exp, i) => (
+            {/* MENGGUNAKAN VARIABEL YANG SUDAH DIAMANKAN */}
+            {safeExperiences.map((exp, i) => (
               <motion.div
-                key={exp.id}
+                key={exp?.id || `exp-${i}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -40,7 +44,7 @@ export default function Experience() {
                   data-aos="fade-right"
                   className="font-mono text-sm text-gray-500 mt-1 sm:group-hover:text-[#c8ff3d] transition-colors duration-500"
                 >
-                  {exp.period}
+                  {exp?.period}
                 </div>
 
                 <div>
@@ -48,19 +52,19 @@ export default function Experience() {
                     data-aos="fade-right"
                     className="font-display text-3xl text-white mb-2 group-hover:text-[#c8ff3d] transition-colors duration-500"
                   >
-                    {exp.role}
+                    {exp?.role}
                   </h3>
                   <div
                     data-aos="fade-right"
                     className="font-mono text-sm mb-4 uppercase tracking-wider text-gray-400"
                   >
-                    {exp.organization}
+                    {exp?.organization}
                   </div>
                   <p
                     data-aos="fade-right"
                     className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500"
                   >
-                    {exp.description}
+                    {exp?.description}
                   </p>
                 </div>
               </motion.div>
