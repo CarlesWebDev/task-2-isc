@@ -3,13 +3,13 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 border-b border-white/10 ">
+    <section id="contact" className="py-32 border-b border-gray-200 dark:border-white/10 ">
       <div className="text-center max-w-3xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-mono text-sm uppercase tracking-widest text-[#c8ff3d] mb-4"
+          className="font-mono text-sm uppercase tracking-widest text-green-600 dark:text-[#c8ff3d] mb-4"
         >
           Contact
         </motion.h2>
@@ -19,7 +19,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ delay: 0.1 }}
-          className="font-display text-5xl md:text-7xl tracking-tight leading-none text-white mb-12"
+          className="font-display text-5xl md:text-7xl tracking-tight leading-none text-gray-900 dark:text-white mb-12"
         >
           Mari diskusikan <br /> ide & kolaborasi.
         </motion.h3>
@@ -34,7 +34,7 @@ export default function Contact() {
           <a
             data-aos="fade-right"
             href="mailto:charlesmarvin4321@gmail.com"
-            className="flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full hover:bg-[#c8ff3d] hover:scale-105 transition-all duration-300 font-bold"
+            className="flex items-center gap-3 bg-gray-900 dark:bg-white text-white dark:text-black px-8 py-4 rounded-full hover:bg-green-500 dark:hover:bg-[#c8ff3d] hover:scale-105 transition-all duration-300 font-bold shadow-md dark:shadow-none"
           >
             <FaEnvelope className="text-lg" /> Email
           </a>
@@ -43,7 +43,7 @@ export default function Contact() {
             href="https://wa.me/6283807362506"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 border border-white/20 px-8 py-4 rounded-full text-white hover:bg-white/10 transition-all duration-300"
+            className="flex items-center gap-3 border border-gray-300 dark:border-white/20 px-8 py-4 rounded-full text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
           >
             <FaWhatsapp className="text-lg" /> WhatsApp
           </a>
@@ -54,7 +54,7 @@ export default function Contact() {
               href="https://github.com/CarlesWebDev"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center w-[54px] h-[54px] rounded-full border border-white/20 text-white hover:bg-[#c8ff3d] hover:text-black hover:border-[#c8ff3d] transition-all duration-300"
+              className="flex items-center justify-center w-[54px] h-[54px] rounded-full border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white hover:bg-green-500 dark:hover:bg-[#c8ff3d] hover:text-white dark:hover:text-black hover:border-green-500 dark:hover:border-[#c8ff3d] transition-all duration-300"
               aria-label="GitHub"
             >
               <FaGithub className="text-2xl" />
@@ -64,7 +64,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/carlsmrvn"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center w-[54px] h-[54px] rounded-full border border-white/20 text-white hover:bg-[#c8ff3d] hover:text-black hover:border-[#c8ff3d] transition-all duration-300"
+              className="flex items-center justify-center w-[54px] h-[54px] rounded-full border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white hover:bg-green-500 dark:hover:bg-[#c8ff3d] hover:text-white dark:hover:text-black hover:border-green-500 dark:hover:border-[#c8ff3d] transition-all duration-300"
               aria-label="LinkedIn"
             >
               <FaLinkedin className="text-2xl" />

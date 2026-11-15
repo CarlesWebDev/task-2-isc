@@ -9,7 +9,6 @@ function HolographicLaptop() {
 
   useFrame((state) => {
     groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.2;
-
     if (screenRef.current) {
       screenRef.current.material.opacity =
         0.5 + Math.sin(state.clock.elapsedTime * 3) * 0.3;
@@ -21,20 +20,10 @@ function HolographicLaptop() {
       <group ref={groupRef} scale={1.2} position={[0, -0.5, 0]}>
         <mesh position={[0, -0.05, 0]}>
           <boxGeometry args={[3, 0.1, 2]} />
-          <meshStandardMaterial
-            color="#111111"
-            metalness={0.9}
-            roughness={0.1}
-          />
-
+          <meshStandardMaterial color="#111111" metalness={0.9} roughness={0.1} />
           <mesh scale={1.01}>
             <boxGeometry args={[3, 0.1, 2]} />
-            <meshBasicMaterial
-              color="#c8ff3d"
-              wireframe
-              transparent
-              opacity={0.2}
-            />
+            <meshBasicMaterial color="#c8ff3d" wireframe transparent opacity={0.2} />
           </mesh>
         </mesh>
 
@@ -43,44 +32,23 @@ function HolographicLaptop() {
           <meshBasicMaterial color="#050505" />
           <mesh scale={1.02}>
             <planeGeometry args={[2.6, 1.2]} />
-            <meshBasicMaterial
-              color="#c8ff3d"
-              wireframe
-              transparent
-              opacity={0.1}
-            />
+            <meshBasicMaterial color="#c8ff3d" wireframe transparent opacity={0.1} />
           </mesh>
         </mesh>
 
         <group position={[0, 0, -1]} rotation={[-0.2, 0, 0]}>
           <mesh position={[0, 1, 0]}>
             <boxGeometry args={[3, 2, 0.1]} />
-            <meshStandardMaterial
-              color="#111111"
-              metalness={0.9}
-              roughness={0.1}
-            />
+            <meshStandardMaterial color="#111111" metalness={0.9} roughness={0.1} />
             <mesh scale={1.01}>
               <boxGeometry args={[3, 2, 0.1]} />
-              <meshBasicMaterial
-                color="#c8ff3d"
-                wireframe
-                transparent
-                opacity={0.3}
-              />
+              <meshBasicMaterial color="#c8ff3d" wireframe transparent opacity={0.3} />
             </mesh>
           </mesh>
 
           <mesh ref={screenRef} position={[0, 1, 0.06]}>
             <planeGeometry args={[2.8, 1.8]} />
-
-            <meshStandardMaterial
-              color="#00f2fe"
-              emissive="#00f2fe"
-              emissiveIntensity={1}
-              transparent
-              opacity={0.8}
-            />
+            <meshStandardMaterial color="#00f2fe" emissive="#00f2fe" emissiveIntensity={1} transparent opacity={0.8} />
           </mesh>
         </group>
       </group>
@@ -92,23 +60,21 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
-    <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-24 min-h-[90vh] flex items-center border-b border-white/10">
+    <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-24 min-h-[90vh] flex items-center border-b border-gray-200 dark:border-white/10">
       <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-mono text-sm uppercase tracking-widest text-gray-400 mb-6"
+            className="font-mono text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-6"
           >
             Junior Full-Stack Developer
           </motion.div>
@@ -118,10 +84,10 @@ export default function Hero() {
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-              className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-white"
+              className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-gray-900 dark:text-white"
             >
               Membangun <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c8ff3d] to-[#00f2fe]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 dark:from-[#c8ff3d] dark:to-[#00f2fe]">
                 Masa Depan
               </span>{" "}
               <br />
@@ -133,11 +99,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg"
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-lg"
           >
-            Fokus pada pengembangan web dan mobile menggunakan ekosistem React,
-            Go, dan Supabase. Menggabungkan estetika modern dengan performa
-            tangguh.
+            Fokus pada pengembangan web dan mobile menggunakan ekosistem React, Go, dan Supabase. Menggabungkan estetika modern dengan performa tangguh.
           </motion.p>
 
           <motion.div
@@ -148,21 +112,17 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold hover:bg-[#c8ff3d] hover:scale-105 transition-all duration-300"
+              className="group flex items-center gap-3 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full font-bold hover:bg-green-500 dark:hover:bg-[#c8ff3d] hover:scale-105 transition-all duration-300"
             >
               Lihat Projek
-              <span className="text-lg group-hover:translate-y-1 transition-transform duration-300">
-                ↓
-              </span>
+              <span className="text-lg group-hover:translate-y-1 transition-transform duration-300">↓</span>
             </a>
             <a
               href="#contact"
-              className="group flex items-center gap-3 px-8 py-4 border border-white/10 bg-white/5 text-white rounded-full hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              className="group flex items-center gap-3 px-8 py-4 border border-gray-300 dark:border-white/10 bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white rounded-full hover:bg-gray-200 dark:hover:bg-white/10 dark:hover:border-white/20 transition-all duration-300"
             >
               Kontak Saya
-              <span className="text-gray-500 group-hover:text-white transition-colors duration-300">
-                ↗
-              </span>
+              <span className="text-gray-500 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">↗</span>
             </a>
           </motion.div>
         </div>
@@ -176,26 +136,10 @@ export default function Hero() {
           >
             <Canvas camera={{ position: [0, 1.5, 6], fov: 45 }}>
               <ambientLight intensity={0.3} />
-
-              <directionalLight
-                position={[5, 10, 5]}
-                intensity={2}
-                color="#c8ff3d"
-              />
-              <directionalLight
-                position={[-5, -5, 5]}
-                intensity={1.5}
-                color="#00f2fe"
-              />
-
+              <directionalLight position={[5, 10, 5]} intensity={2} color="#c8ff3d" />
+              <directionalLight position={[-5, -5, 5]} intensity={1.5} color="#00f2fe" />
               <HolographicLaptop />
-
-              <OrbitControls
-                enableZoom={false}
-                autoRotate={false}
-                maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 4}
-              />
+              <OrbitControls enableZoom={false} autoRotate={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 4} />
             </Canvas>
           </motion.div>
         )}

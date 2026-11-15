@@ -161,6 +161,8 @@
   }
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .ticks {
   position: relative;
   width: 100%;
