@@ -66,7 +66,6 @@ export default function Projects() {
                     transition: { duration: 0.3 },
                   }}
                   viewport={{ once: true, margin: "-50px" }}
-                  // Muncul berurutan (stagger) menggunakan index (i)
                   transition={{
                     duration: 0.6,
                     delay: i * 0.15,

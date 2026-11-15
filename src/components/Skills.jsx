@@ -17,11 +17,17 @@ export default function Skills() {
       className="py-20 md:py-32 overflow-hidden border-b border-white/10 "
     >
       <div className="max-w-7xl mx-auto px-6 mb-12 md:mb-16 text-center">
-        <h2 data-aos="fade-down" className="font-mono text-xs md:text-sm uppercase tracking-widest text-[#c8ff3d] mb-3 md:mb-4">
-          Tech Stack 
+        <h2
+          data-aos="fade-down"
+          className="font-mono text-xs md:text-sm uppercase tracking-widest text-[#c8ff3d] mb-3 md:mb-4"
+        >
+          Tech Stack
         </h2>
 
-        <h3 data-aos="fade-down"  className="font-display text-4xl md:text-5xl lg:text-6xl text-white tracking-tight">
+        <h3
+          data-aos="fade-down"
+          className="font-display text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+        >
           Ekosistem & <br className="block md:hidden" /> Lingkungan Kerja.
         </h3>
       </div>
