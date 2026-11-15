@@ -23,6 +23,7 @@ export default function Projects() {
     }
   };
 
+  const safeProject = projects || [];
   const displayedProjects = isExpanded ? projects : projects.slice(0, 2);
 
   return (
@@ -134,7 +135,7 @@ export default function Projects() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 md:gap-3">
-                    {project.stack.map((tech) => (
+                    {project.stack?.map((tech) => (
                       <span
                         key={tech}
                         className="font-mono text-[10px] sm:text-xs uppercase tracking-wider px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/10 text-gray-300 bg-white/5"
@@ -149,7 +150,7 @@ export default function Projects() {
           </AnimatePresence>
         </motion.div>
 
-        {projects.length > 2 && (
+        {safeProject.length > 2 && (
           <div className="mt-12 flex justify-center">
             <button
               onClick={handleToggle}
