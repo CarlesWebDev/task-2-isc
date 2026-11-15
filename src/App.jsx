@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-// import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// import Loader from "./components/Loader";
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -17,13 +17,13 @@ import ScrollToTop from "./components/Scrolltotop";
 import AmbientBackground from "./components/Ambientbackground";
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(() => {
-  //   const hasSeen = sessionStorage.getItem("hasSeenLoader");
-  //   return !hasSeen;
-  // });
+  const [isLoading, setIsLoading] = useState(() => {
+    const hasSeen = sessionStorage.getItem("hasSeenLoader");
+    return !hasSeen;
+  });
 
   useEffect(() => {
-    // if (isLoading) return;
+    if (isLoading) return;
 
     AOS.init({
       duration: 800,
@@ -57,11 +57,11 @@ function App() {
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, [isLoading]);
 
   return (
     <div className="min-h-screen text-white selection:bg-[#c8ff3d] selection:text-black">
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isLoading && (
           <Loader
             key="loader"
@@ -72,9 +72,9 @@ function App() {
             }}
           />
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
 
-      <div className={`"h-screen overflow-hidden" : ""}`}>
+      <div className={`${isLoading ? "h-screen overflow-hidden" : ""}`}>
         <Navbar />
         <AmbientBackground />
         <main className="overflow-x-hidden">
