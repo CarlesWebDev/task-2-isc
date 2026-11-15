@@ -8,7 +8,30 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-    server: {
+  server: {
     allowedHosts: ['.ngrok-free.app'],
+  },
+  build: {
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            {
+             
+              name: "react-vendor",
+              test: /node_modules[\\/](react|react-dom|react-router)/,
+              priority: 20,
+            },
+            {
+              name: "vendor",
+              test: /node_modules/,
+              minSize: 50000,  // 50 kB
+              maxSize: 250000, // 250 kB
+              priority: 10,
+            },
+          ],
+        },
+      },
+    },
   },
 });
